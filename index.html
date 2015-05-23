@@ -14,9 +14,19 @@ layout: page
   <section class="projects">
     <h2>Projects</h2>
     <dl>
-    {% for repository in site.github.public_repositories %} {% if repository.homepage %} {% unless repository.description == "" %} {% unless repository.fork %}
-      <dt><a href="{{ repository.homepage }}">{{ repository.name | titleize }}</a></dt><dd>{{ repository.description }}</dd>
-    {% endunless %} {% endunless %} {% endif %} {% endfor %}
+    {% for repository in site.github.public_repositories %}
+      {% if repository.homepage %}
+      {% unless repository.homepage == "" %}
+      {% if repository.description %}
+      {% unless repository.description == "" %}
+      {% unless repository.fork %}
+        <dt><a href="{{ repository.homepage }}">{{ repository.name | titleize }}</a></dt><dd>{{ repository.description }}</dd>
+      {% endunless %}
+      {% endunless %}
+      {% endif %}
+      {% endunless %}
+      {% endif %}
+    {% endfor %}
     </dl>
   </section>
 </div>
