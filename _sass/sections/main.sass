@@ -5,3 +5,14 @@
   @for $width from 61 through 100
     @media (min-width: #{$width}rem)
       width: #{$width - 23}rem
+
+.main-small
+  @media (min-width: 40rem)
+    float: left
+    width: 33rem
+  @for $width from 41 to 60
+    @media (min-width: #{$width}rem)
+      width: #{$width - 14}rem
+  @for $width from 60 through 100
+    @media (min-width: #{$width}rem)
+      width: #{$width - 14}rem

@@ -1,6 +1,6 @@
 @import solarized
 
-.header
+header
   border: solid 1px $base01
   border-bottom: 0px
   border-radius: 2rem 2rem 0 0
@@ -13,3 +13,20 @@
     @for $width from 30 through 70
       @media (min-width: #{$width}rem)
         font-size: #{$width / 9}rem
+  &.header-small
+    h1
+      font-size: 3rem
+      @media (min-width: 50rem)
+        font-size: 3rem
+      @media (min-width: 57.5rem)
+        font-size: 3.5rem
+      @media (min-width: 65rem)
+        font-size: 4rem
+      @media (min-width: 72.5rem)
+        font-size: 4.5rem
+      @media (min-width: 80rem)
+        font-size: 5rem
+      @media (min-width: 87.5rem)
+        font-size: 5.5rem
+      @media (min-width: 95rem)
+        font-size: 6rem
