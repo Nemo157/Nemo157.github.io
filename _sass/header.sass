@@ -1,0 +1,15 @@
+@import solarized
+
+.header
+  border: solid 1px $base01
+  border-bottom: 0px
+  border-radius: 2rem 2rem 0 0
+  padding: 1rem 1rem 0 1rem
+  margin-top: 2rem
+  margin-bottom: 0
+  h1
+    font-family: Sigmar One
+    margin-bottom: 0
+    @for $width from 30 through 70
+      @media (min-width: #{$width}rem)
+        font-size: #{$width / 9}rem

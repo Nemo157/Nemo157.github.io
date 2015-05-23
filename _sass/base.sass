@@ -1,0 +1,24 @@
+// For small windows 10 screens so media directives work
+@-ms-viewport
+  width: device-width
+
+*
+  cursor: default
+
+// html is set to 62.5% so that all the REM measurements are based on 10px sizing
+html
+  font-size: 62.5%
+
+body
+  // currently ems cause chrome bug misinterpreting rems on body element
+  font-size: 1.5em
+  line-height: 1.6
+  font-weight: 400
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+  position: relative
+  width: 100%
+  max-width: 100rem
+  margin: 0 auto
+  padding: 0 2rem
+  box-sizing: border-box
+

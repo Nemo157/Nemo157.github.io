@@ -1,0 +1,7 @@
+.main
+  @media (min-width: 60rem)
+    float: left
+    width: 37rem
+  @for $width from 61 through 100
+    @media (min-width: #{$width}rem)
+      width: #{$width - 23}rem
