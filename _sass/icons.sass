@@ -2,13 +2,15 @@
   display: inline-block
   width: 16px
   height: 16px
+  opacity: 0.8
+  margin: 1px 0px -3px 0px
 
-  &.github
-    opacity: 0.6
-    margin: 0px 2px -2px 0px
-    background: url("../images/blacktocat.png") 0 0 no-repeat
+  @each $domain in "nemo157" "twitter" "plus-google" "facebook" "steamcommunity" "last-fm" "trakt-tv" "goodreads" "stackexchange" "github" "cargo"
+    &.#{$domain}
+      background: url("../images/#{$domain}.png") 0 0 no-repeat
 
-  &.cargo
-    opacity: 0.6
-    margin: 1px 0px -3px 0px
-    background: url("../images/cargo.png") 0 0 no-repeat
+@each $domain in "nemo157" "github"
+  .light .icon.#{$domain}
+    background: url("../images/#{$domain}-light.png") 0 0 no-repeat
+  .dark .icon.#{$domain}
+    background: url("../images/#{$domain}-dark.png") 0 0 no-repeat

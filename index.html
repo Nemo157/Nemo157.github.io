@@ -2,49 +2,43 @@
 layout: page
 ---
 
-<div class="main">
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      My name is <a href="mailto:wim@nemo157.com">Wim Looman</a>, I'm a software
-      engineer.
-    </p>
-  </section>
-
-  <section class="projects">
-    <h2>Projects</h2>
-    <dl>
-    {% for repository in site.github.public_repositories %}
-      {% if repository.homepage %}
-      {% unless repository.homepage == "" %}
-      {% if repository.description %}
-      {% unless repository.description == "" %}
-      {% unless repository.fork %}
-        <dt><a href="{{ repository.homepage }}">{{ repository.name | titleize }}</a></dt><dd>{{ repository.description }}</dd>
-      {% endunless %}
-      {% endunless %}
-      {% endif %}
-      {% endunless %}
-      {% endif %}
-    {% endfor %}
-    </dl>
-  </section>
-</div>
-
-<section class="links">
-  <div class="links-wrapper">
-    <h2>Links</h2>
-    <a class="button" href="https://blog.nemo157.com"><img src="images/blog.nemo157.com.png" alt="My Blog"> My Blog</a>
-    <a class="button" href="http://twitter.com/#!/Nemo157"><img src="images/twitter.com.png" alt="Twitter"> Twitter</a>
-    <a class="button" href="https://plus.google.com/+WimLooman"><img src="images/plus.google.com.png" alt="Google+"> Google+</a>
-    <a class="button" href="https://facebook.com/Nemo157"><img src="images/facebook.com.png" alt="Facebook"> Facebook</a>
-    <a class="button" href="https://steamcommunity.com/id/Nemo157"><img src="images/steamcommunity.com.png" alt="Steam"> Steam</a>
-    <a class="button" href="https://www.last.fm/user/Nemo157_"><img src="images/last.fm.png" alt="Last.fm"> Last.fm</a>
-    <a class="button" href="https://trakt.tv/user/Nemo157"><img src="images/trakt.tv.png" alt="Trakt.tv"> Trakt.tv</a>
-    <a class="button" href="https://www.goodreads.com/Nemo157"><img src="images/goodreads.com.png" alt="Goodreads"> Goodreads</a>
-    <a class="button" href="https://github.com/Nemo157"><img src="images/github.com.png" alt="Github"> Github</a>
-    <a class="button" href="http://stackexchange.com/users/95748/nemo157"><img src="images/stackexchange.com.png" alt="StackExchange"> Stack X</a>
-  </div>
+<section>
+  <h2>About Me</h2>
+  <p>
+    My name is <a href="mailto:wim@nemo157.com">Wim Looman</a>, I'm a software
+    engineer.
+  </p>
 </section>
 
-<div class="u-cf"></div>
+<section>
+  <h2>Projects</h2>
+  <dl>
+  {% for repository in site.github.public_repositories %}
+    {% if repository.homepage %}
+    {% unless repository.homepage == "" %}
+    {% if repository.description %}
+    {% unless repository.description == "" %}
+    {% unless repository.fork %}
+      <dt><a href="{{ repository.homepage }}">{{ repository.name | titleize }}</a></dt><dd>{{ repository.description }}</dd>
+    {% endunless %}
+    {% endunless %}
+    {% endif %}
+    {% endunless %}
+    {% endif %}
+  {% endfor %}
+  </dl>
+</section>
+
+<section>
+  <h2>Links</h2>
+  <a class="button" href="https://blog.nemo157.com"><span class="icon nemo157"></span> My Blog</a>
+  <a class="button" href="http://twitter.com/#!/Nemo157"><span class="icon twitter"></span> Twitter</a>
+  <a class="button" href="https://plus.google.com/+WimLooman"><span class="icon plus-google"></span> Google+</a>
+  <a class="button" href="https://facebook.com/Nemo157"><span class="icon facebook"></span> Facebook</a>
+  <a class="button" href="https://steamcommunity.com/id/Nemo157"><span class="icon steamcommunity"></span> Steam</a>
+  <a class="button" href="https://www.last.fm/user/Nemo157_"><span class="icon last-fm"></span> Last.fm</a>
+  <a class="button" href="https://trakt.tv/user/Nemo157"><span class="icon trakt-tv"></span> Trakt.tv</a>
+  <a class="button" href="https://www.goodreads.com/Nemo157"><span class="icon goodreads"></span> Goodreads</a>
+  <a class="button" href="https://github.com/Nemo157"><span class="icon github"></span> Github</a>
+  <a class="button" href="http://stackexchange.com/users/95748/nemo157"><span class="icon stackexchange"></span> Stack X</a>
+</section>
