@@ -5,21 +5,33 @@ if (!navigator.userAgent.match(/(iPad|iPhone|iPod)/)) {
   document.body.classList.add('support-hover')
 }
 
-if (window.localStorage) {
-  document.shade = window.localStorage.getItem('shade')
+var storage = window.localStorage || { getItem: function () {}, setItem: function () {} }
+
+var clamp = function (val) {
+  return val && Math.max(Math.min(val, 26), 10)
 }
 
-if (!document.shade) {
-  document.shade = 'dark'
-}
+var shade = storage.getItem('shade') || 'dark'
+var size = clamp(parseInt(storage.getItem('size'), 10)) || 18
 
-document.body.classList.add(document.shade)
+document.body.classList.add(shade)
+document.body.style.fontSize = size + 'px'
 
-window.onSwitcherClick = function () {
-  document.shade = document.shade === 'dark' ? 'light' : 'dark'
-  if (window.localStorage) {
-    window.localStorage.setItem('shade', document.shade)
-  }
+window.onInvertClick = function () {
+  shade = shade === 'dark' ? 'light' : 'dark'
+  storage.setItem('shade', shade)
   document.body.classList.toggle('dark')
   document.body.classList.toggle('light')
+}
+
+window.onPlusClick = function () {
+  size = clamp(size + 1)
+  storage.setItem('size', size)
+  document.body.style.fontSize = size + 'px'
+}
+
+window.onMinusClick = function () {
+  size = clamp(size - 1)
+  storage.setItem('size', size)
+  document.body.style.fontSize = size + 'px'
 }
