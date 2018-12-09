@@ -3,33 +3,6 @@ layout: page
 ---
 
 <section>
-  <h2>About Me</h2>
-  <p>
-    My name is <a href="mailto:wim@nemo157.com">Wim Looman</a>, I'm a software
-    engineer.
-  </p>
-</section>
-
-<section>
-  <h2>Projects</h2>
-  <dl>
-  {% for repository in site.github.public_repositories %}
-    {% if repository.homepage %}
-    {% unless repository.homepage == "" %}
-    {% if repository.description %}
-    {% unless repository.description == "" %}
-    {% unless repository.fork %}
-      <dt><a href="{{ repository.homepage }}">{{ repository.name | titleize }}</a></dt><dd>{{ repository.description }}</dd>
-    {% endunless %}
-    {% endunless %}
-    {% endif %}
-    {% endunless %}
-    {% endif %}
-  {% endfor %}
-  </dl>
-</section>
-
-<section>
   <h2>Links</h2>
   <a class="button" href="https://blag.nemo157.com"><span class="icon nemo157"></span> My Blog</a>
   <a class="button" href="http://twitter.com/#!/Nemo157"><span class="icon twitter"></span> Twitter</a>
