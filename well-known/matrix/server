@@ -1,0 +1,5 @@
+---
+layout: none
+permalink: .well-known/matrix/server
+---
+{"m.server":"synapse.nemo157.com"}
