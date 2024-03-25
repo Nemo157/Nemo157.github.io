@@ -7,7 +7,7 @@ mimetypes=(
 
 style() {
   echo "  &.$1:t:r
-    background: url(data:$mimetypes[$1:e];base64,$(base64 $1)) 0 0 no-repeat
+    background: url(data:$mimetypes[$1:e];base64,$(base64 -w0 $1)) 0 0 no-repeat
 "
 }
 
